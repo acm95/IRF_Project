@@ -30,7 +30,8 @@ namespace Projekt
                     szoveg = reader.ReadLine();
                     Console.WriteLine(szoveg);
                 }
-                    
+                reader.Close();
+                Console.ReadLine();
             }
         }
     }
