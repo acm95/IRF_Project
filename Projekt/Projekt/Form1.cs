@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace Projekt
 {
@@ -18,6 +20,16 @@ namespace Projekt
 
             InitializeComponent();
         }
-        
+
+        private void CreateExcel()
+        {
+            Excel.Application xlApp = new Excel.Application();
+            Excel.Workbook xlWbook = xlApp.Workbooks.Add(Missing.Value);
+            Excel.Worksheet xlSheet = xlWbook.ActiveSheet;
+
+            xlApp.Visible = true;
+            
+            xlApp.UserControl = true;
+        }
     }
 }
