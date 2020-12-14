@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Projekt
@@ -14,7 +15,23 @@ namespace Projekt
     {
         public Form1()
         {
+
             InitializeComponent();
+        }
+
+        public class Reader
+        {
+            static void Main(string[] args)
+            {
+                    StreamReader reader = new StreamReader("C:\\Sample.txt", Encoding.Default);
+                string szoveg;
+                while (!reader.EndOfStream)
+                {
+                    szoveg = reader.ReadLine();
+                    Console.WriteLine(szoveg);
+                }
+                    
+            }
         }
     }
 }
