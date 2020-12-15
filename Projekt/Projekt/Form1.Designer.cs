@@ -35,12 +35,13 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.gyerekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Betegseg = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.vezeteknevDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keresztnevDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.korDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.csoportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Betegseg = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.gyerekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gyerekekBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -102,9 +103,11 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // gyerekekBindingSource
+            // Betegseg
             // 
-            this.gyerekekBindingSource.DataSource = typeof(Projekt.Gyerekek);
+            this.Betegseg.DataPropertyName = "Betegseg";
+            this.Betegseg.HeaderText = "Betegseg";
+            this.Betegseg.Name = "Betegseg";
             // 
             // vezeteknevDataGridViewTextBoxColumn
             // 
@@ -130,17 +133,26 @@
             this.csoportDataGridViewTextBoxColumn.HeaderText = "Csoport";
             this.csoportDataGridViewTextBoxColumn.Name = "csoportDataGridViewTextBoxColumn";
             // 
-            // Betegseg
+            // gyerekekBindingSource
             // 
-            this.Betegseg.DataPropertyName = "Betegseg";
-            this.Betegseg.HeaderText = "Betegseg";
-            this.Betegseg.Name = "Betegseg";
+            this.gyerekekBindingSource.DataSource = typeof(Projekt.Gyerekek);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(564, 26);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
@@ -171,6 +183,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn korDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn csoportDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Betegseg;
+        private System.Windows.Forms.Button button4;
     }
 }
 
