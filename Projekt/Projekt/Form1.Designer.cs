@@ -32,15 +32,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.gyerekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vezeteknevDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keresztnevDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.korDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.csoportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.betegségDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.gyerekekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Betegseg = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gyerekekBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -74,12 +74,37 @@
             this.keresztnevDataGridViewTextBoxColumn,
             this.korDataGridViewTextBoxColumn,
             this.csoportDataGridViewTextBoxColumn,
-            this.betegségDataGridViewCheckBoxColumn});
+            this.Betegseg});
             this.dataGridView1.DataSource = this.gyerekekBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(40, 67);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(545, 155);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(51, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(450, 26);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // gyerekekBindingSource
+            // 
+            this.gyerekekBindingSource.DataSource = typeof(Projekt.Gyerekek);
             // 
             // vezeteknevDataGridViewTextBoxColumn
             // 
@@ -105,36 +130,11 @@
             this.csoportDataGridViewTextBoxColumn.HeaderText = "Csoport";
             this.csoportDataGridViewTextBoxColumn.Name = "csoportDataGridViewTextBoxColumn";
             // 
-            // betegségDataGridViewCheckBoxColumn
+            // Betegseg
             // 
-            this.betegségDataGridViewCheckBoxColumn.DataPropertyName = "Betegség";
-            this.betegségDataGridViewCheckBoxColumn.HeaderText = "Betegség";
-            this.betegségDataGridViewCheckBoxColumn.Name = "betegségDataGridViewCheckBoxColumn";
-            // 
-            // gyerekekBindingSource
-            // 
-            this.gyerekekBindingSource.DataSource = typeof(Projekt.Gyerekek);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(51, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(450, 26);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Betegseg.DataPropertyName = "Betegseg";
+            this.Betegseg.HeaderText = "Betegseg";
+            this.Betegseg.Name = "Betegseg";
             // 
             // Form1
             // 
@@ -163,13 +163,14 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn betegségDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource gyerekekBindingSource;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn vezeteknevDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn keresztnevDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn korDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn csoportDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn betegségDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.BindingSource gyerekekBindingSource;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Betegseg;
     }
 }
 
