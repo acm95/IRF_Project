@@ -8,10 +8,78 @@ namespace Projekt
 {
     class Gyerekek
     {
-        public string Vezeteknev { get; set; }
-        public string Keresztnev { get; set; }
-        public int Kor { get; set; }
-        public string Csoport { get; set; }
-        public bool Betegség { get; set; }
+        private string _vezeteknev;
+        private string _keresztnev;
+        private int _age;
+        private string _csoport;
+        private bool _betegseg;
+
+        public string Vezeteknev
+        {
+            get
+            {
+                return _vezeteknev;
+            }
+            set
+            {
+                _vezeteknev = value;
+            }
+
+        }
+
+
+
+        public string Keresztnev
+        {
+            get
+            {
+                return _keresztnev;
+            }
+            set
+            {
+                _keresztnev = value;
+            }
+        }
+
+
+        public int Kor
+        {
+            get
+            {
+                return _age;
+            }
+
+            set
+            {
+                if (value > 0)
+                {
+                    _age = value;
+                }
+            }
+        }
+
+
+        public string Csoport
+        {
+            get
+            {
+                return _csoport;
+            }
+            set
+            {
+                _csoport = value;
+            }
+        }
+        public bool Betegseg
+        {
+            get
+            {
+                return _betegseg;
+            }
+            set
+            {
+                _betegseg = value;
+            }
+        }
     }
 }

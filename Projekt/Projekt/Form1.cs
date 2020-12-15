@@ -37,22 +37,22 @@ namespace Projekt
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //using (SaveFileDialog sdl = new SaveFileDialog() { Filter = "CSV|*.csv", ValidateNames = true })
-            //{
-            //    if (sdl.ShowDialog() == DialogResult.OK)
-            //    {
-            //        using (var sw = new StreamWriter(sdl.FileName))
-            //        {
-            //            var writer = new CsvWriter(sw, System.Globalization.CultureInfo.CurrentCulture);
-            //            writer.WriteHeader(typeof(Gyerekek));
-            //            foreach (Gyerekek s in dataGridView1.DataSource as List<Gyerekek>)
-            //            {
-            //                writer.WriteRecord(s);
-            //            }
-            //        }
-            //        MessageBox.Show("");
-            //    }
-            //}
+            using (SaveFileDialog sdl = new SaveFileDialog() { Filter = "CSV|*.csv", ValidateNames = true })
+            {
+                if (sdl.ShowDialog() == DialogResult.OK)
+                {
+                    using (var sw = new StreamWriter(sdl.FileName))
+                    {
+                        var writer = new CsvWriter(sw, System.Globalization.CultureInfo.CurrentCulture);
+                        writer.WriteHeader(typeof(Gyerekek));
+                        foreach (Gyerekek s in dataGridView1.DataSource as List<Gyerekek>)
+                        {
+                            writer.WriteRecord(s);
+                        }
+                    }
+                    MessageBox.Show("");
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace Projekt
                 values[counter, 1] = gy.Keresztnev;
                 values[counter, 2] = gy.Kor;
                 values[counter, 3] = gy.Csoport;
-                values[counter, 4] = gy.Betegség;
+                values[counter, 4] = gy.Betegseg;
                 counter++;
             }
             xlSheet.get_Range(
@@ -137,8 +137,8 @@ namespace Projekt
             headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             headerRange.EntireColumn.AutoFit();
-            headerRange.RowHeight = 40;
-            headerRange.Interior.Color = Color.LightBlue;
+            headerRange.RowHeight = 80;
+            headerRange.Interior.Color = Color.Brown;
             headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
             int lastRowID = xlSheet.UsedRange.Rows.Count;
 
