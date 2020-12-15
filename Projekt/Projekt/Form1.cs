@@ -17,7 +17,7 @@ namespace Projekt
     public partial class Form1 : Form
     {
 
-        List<Gyerekek> gyerekeks;    
+        private List<Gyerekek> gyerekeks = new List<Gyerekek>();    
         public Form1()
         {
 
@@ -31,6 +31,8 @@ namespace Projekt
         {
             CreateExcel();
         }
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -94,9 +96,27 @@ namespace Projekt
 
                     gyerek.Vezeteknev = sor[0];
                     gyerek.Keresztnev = sor[1];
-                    gyerek.Kor = int.Parse(sor[2]);
+                    try
+                    {
+                        gyerek.Kor = int.Parse(sor[2]);
+                    }
+                    catch
+                    {
+
+
+                    }
+                    
                     gyerek.Csoport = sor[3];
-                    gyerek.Betegseg = bool.Parse(sor[4]);
+                    try
+                    {
+                        gyerek.Betegseg = bool.Parse(sor[4]);
+                    }
+                    catch
+                    {
+
+
+                    }
+                    
                     
                     gyerekekBindingSource.Add(gyerek);
 
@@ -104,48 +124,10 @@ namespace Projekt
                 }
 
             }
-            //openFileDialog1.ShowDialog();
-
-            //textBox1.Text = openFileDialog1.FileName;
-            //BindDataCSV(textBox1.Text);
-            //string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Data\Names.txt");
-            //string[] files = File.ReadAllLines(path);
+            
         }
 
-        //private void BindDataCSV(string filePath)
-        //{
-        //    DataTable dt = new DataTable();
-        //    string[] lines = File.ReadAllLines(filePath);
-        //    if (lines.Length>0)
-        //    {
-        //        string firstline = lines[0];
-        //        string[] headerLabels = firstline.Split(',');
-        //        foreach (string headerWord in headerLabels)
-        //        {
-        //            dt.Columns.Add(new DataColumn(headerWord));
-        //        }
-        //        for (int r = 1; r < lines.Length; r++)
-        //        {
-        //            string[] dataWords = lines[r].Split(',');
-        //            DataRow dr = dt.NewRow();
-        //            int columnIndex = 0;
-        //            foreach (string headerWord in headerLabels)
-        //            {
-        //                dr[headerWord] = dataWords[columnIndex++];
-        //            }
-        //            dt.Rows.Add(dr);
-        //        }
-        //    }
-        //    if (dt.Rows.Count>0)
-        //    {
-        //        dataGridView1.DataSource = dt;
-        //    }
-        //}
-
         
-
-        
-
         private void CreateExcel()
         {
             Excel.Application xlApp = new Excel.Application();
@@ -160,6 +142,7 @@ namespace Projekt
              "Csoport",
              "Betegség"
             };
+            xlSheet.Cells[1, 1] = headers[0];
             for (int i = 1; i < headers.Length + 1; i++)
             {
                 xlSheet.Cells[1, i] = headers[i - 1];
@@ -184,8 +167,8 @@ namespace Projekt
             headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             headerRange.EntireColumn.AutoFit();
-            headerRange.RowHeight = 80;
-            headerRange.Interior.Color = Color.Brown;
+            headerRange.RowHeight = 50;
+            headerRange.Interior.Color = Color.Blue;
             headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
             int lastRowID = xlSheet.UsedRange.Rows.Count;
 
@@ -213,7 +196,7 @@ namespace Projekt
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = new List<Gyerekek>();
+            
         }
 
         
