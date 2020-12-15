@@ -35,17 +35,27 @@ namespace Projekt
         private void button3_Click(object sender, EventArgs e)
         {
 
-            //SaveFileDialog sfd = new SaveFileDialog();
-            //sfd.Filter = "Comma Seperated Values (*.csv)|*.csv";
-            //sfd.DefaultExt = "csv";
-            //sfd.AddExtension = true;
-            //if (sfd.ShowDialog == DialogResult.OK)
-            //{
-            //    using (StreamWriter sw = new StreamWriter(sfd.FileName))
-            //    {
-
-            //    }
-            //}
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv";
+            sfd.DefaultExt = "csv";
+            sfd.AddExtension = true;
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
+                {
+                    sw.Write("Vezeteknev");
+                    sw.Write(";");
+                    sw.Write("Keresztnev");
+                    sw.Write(";");
+                    sw.Write("Kor");
+                    sw.Write(";");
+                    sw.Write("Csoport");
+                    sw.Write(";");
+                    sw.Write("Betegseg");
+                    sw.WriteLine();
+                }
+                MessageBox.Show("A nyereséglista fájlba írása sikeres volt!");
+            }
             //using (SaveFileDialog sdl = new SaveFileDialog() { Filter = "CSV|*.csv", ValidateNames = true })
             //{
             //    if (sdl.ShowDialog() == DialogResult.OK)
@@ -84,27 +94,9 @@ namespace Projekt
 
                     gyerek.Vezeteknev = sor[0];
                     gyerek.Keresztnev = sor[1];
-
-                    try
-                    {
-                        gyerek.Kor = int.Parse(sor[2]);
-                    }
-                    catch
-                    {
-
-                    }
-
+                    gyerek.Kor = int.Parse(sor[2]);
                     gyerek.Csoport = sor[3];
-
-                    try
-                    {
-                        gyerek.Betegseg = bool.Parse(sor[4]);
-                    }
-                    catch
-                    {
-
-
-                    }
+                    gyerek.Betegseg = bool.Parse(sor[4]);
                     
                     gyerekekBindingSource.Add(gyerek);
 
