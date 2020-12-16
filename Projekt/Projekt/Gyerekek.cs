@@ -12,6 +12,7 @@ namespace Projekt
         private string _keresztnev;
         private int _age;
         private string _csoport;
+        private bool _betegseg;
 
         public string Vezeteknev
         {
@@ -69,6 +70,20 @@ namespace Projekt
                 _csoport = value;
             }
         }
-        public bool Betegseg{ get; set; }
+        public bool Betegseg
+        {
+            get
+            {
+                return _betegseg;
+            }
+            set
+            {
+                if (_betegseg == true)
+                {
+                    _betegseg = true;
+                }
+                _betegseg = false;
+            }
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace Projekt
         {
             Random rng = new Random();
             int randomszam = 0;
-            randomszam = rng.Next(1,6);
+            randomszam = rng.Next(0,5);
 
             if (randomszam==0)
             {
@@ -45,16 +45,12 @@ namespace Projekt
                 
                 MessageBox.Show("A gyerek a D csoportba került.");
             }
-            else if (randomszam == 4)
+            else
             {
                 
                 MessageBox.Show("A gyerek az E csoportba került.");
             }
-            else
-            {
-                string csoport = Convert.ToString(randomszam);
-                MessageBox.Show("A gyerek a(z) " + csoport + ". csoportba került.");
-            }
+            
         }
     }
 }
