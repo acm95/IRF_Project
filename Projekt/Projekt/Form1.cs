@@ -55,8 +55,16 @@ namespace Projekt
                     sw.Write(";");
                     sw.Write("Betegseg");
                     sw.WriteLine();
+
+                    for (int i = 0; i < gyerekeks.Count; i++)
+                    {
+                        sw.Write(i);
+                        sw.Write(";");
+                        sw.Write(gyerekeks[i]);
+                        sw.WriteLine();
+                    }
                 }
-                MessageBox.Show("A nyereséglista fájlba írása sikeres volt!");
+                MessageBox.Show("A mentés sikeres volt!");
             }
             //using (SaveFileDialog sdl = new SaveFileDialog() { Filter = "CSV|*.csv", ValidateNames = true })
             //{
