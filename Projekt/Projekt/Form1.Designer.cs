@@ -47,7 +47,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(162, 222);
+            this.button1.Location = new System.Drawing.Point(182, 222);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(25, 222);
+            this.button2.Location = new System.Drawing.Point(37, 222);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -76,7 +76,7 @@
             this.csoportDataGridViewTextBoxColumn,
             this.Betegseg});
             this.dataGridView1.DataSource = this.gyerekekBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(37, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(544, 193);
             this.dataGridView1.TabIndex = 2;
@@ -87,7 +87,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(312, 222);
+            this.button3.Location = new System.Drawing.Point(335, 222);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -103,7 +103,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(448, 222);
+            this.button4.Location = new System.Drawing.Point(484, 222);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 23);
             this.button4.TabIndex = 5;
