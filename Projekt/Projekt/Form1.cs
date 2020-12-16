@@ -56,11 +56,11 @@ namespace Projekt
                     sw.Write("Betegseg");
                     sw.WriteLine();
 
-                    for (int i = 0; i < gyerekeks.Count; i++)
+                    for (int i = 0; i < gyerekekBindingSource.Count; i++)
                     {
                         sw.Write(i);
                         sw.Write(";");
-                        sw.Write(gyerekeks[i]);
+                        sw.Write(gyerekekBindingSource[i]);
                         sw.WriteLine();
                     }
                 }

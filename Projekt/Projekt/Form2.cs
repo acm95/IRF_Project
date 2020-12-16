@@ -12,6 +12,8 @@ namespace Projekt
 {
     public partial class Form2 : Form
     {
+        private List<Gyerekek> gyerekeks = new List<Gyerekek>();
+        
         public Form2()
         {
             InitializeComponent();
@@ -19,7 +21,40 @@ namespace Projekt
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Random rng = new Random();
+            int randomszam = 0;
+            randomszam = rng.Next(1,6);
 
+            if (randomszam==0)
+            {
+                
+                MessageBox.Show("A gyerek az A csoportba került.");
+            }
+            else if (randomszam == 1)
+            {
+                
+                MessageBox.Show("A gyerek a B csoportba került.");
+            }
+            else if (randomszam == 2)
+            {
+                
+                MessageBox.Show("A gyerek a C csoportba került.");
+            }
+            else if (randomszam == 3)
+            {
+                
+                MessageBox.Show("A gyerek a D csoportba került.");
+            }
+            else if (randomszam == 4)
+            {
+                
+                MessageBox.Show("A gyerek az E csoportba került.");
+            }
+            else
+            {
+                string csoport = Convert.ToString(randomszam);
+                MessageBox.Show("A gyerek a(z) " + csoport + ". csoportba került.");
+            }
         }
     }
 }
