@@ -66,22 +66,7 @@ namespace Projekt
                 }
                 MessageBox.Show("A mentés sikeres volt!");
             }
-            //using (SaveFileDialog sdl = new SaveFileDialog() { Filter = "CSV|*.csv", ValidateNames = true })
-            //{
-            //    if (sdl.ShowDialog() == DialogResult.OK)
-            //    {
-            //using (var sw = new StreamWriter(sdl.FileName))
-            //{
-            //    var writer = new CsvWriter(sw, System.Globalization.CultureInfo.CurrentCulture);
-            //    writer.WriteHeader(typeof(Gyerekek));
-            //    foreach (Gyerekek s in dataGridView1.DataSource as List<Gyerekek>)
-            //    {
-            //        writer.WriteRecord(s);
-            //    }
-            //}
-            //        MessageBox.Show("");
-            //    }
-            //}
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -135,7 +120,12 @@ namespace Projekt
             
         }
 
-        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
+
         private void CreateExcel()
         {
             Excel.Application xlApp = new Excel.Application();
@@ -207,10 +197,6 @@ namespace Projekt
             
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Form2 f2 = new Form2();
-            f2.Show();
-        }
+        
     }
 }
