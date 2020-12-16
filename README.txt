@@ -1,0 +1,2 @@
+Egy budapesti óvoda az eddig használt papír alapon lévõ adatokat/információkat szeretnék átimportálni elektronikus környezetbe. A program ezt a célt szolgálja nekik,
+hogy az eddigi adatokat felvigye a rendszer, majd a késõbbi átlátható rendezéshez exportálni is lehetséges az adatokat.
